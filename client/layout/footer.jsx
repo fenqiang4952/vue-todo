@@ -1,7 +1,7 @@
 import '../assets/styles/footer.styl'
 
 export default {
-  render() {
+  render () {
     return (
       <div id="footer">
         <span>Written by striveyan</span>
