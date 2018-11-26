@@ -1,2 +1,3 @@
 // import './computed'
-import './directive'
+// import './directive'
+import './component'
