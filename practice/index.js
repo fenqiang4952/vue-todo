@@ -1,0 +1,2 @@
+// import './computed'
+import './directive'

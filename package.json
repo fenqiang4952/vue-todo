@@ -10,7 +10,8 @@
     "clean": "rimraf dist",
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "acorn": "^6.0.4",
     "autoprefixer": "7.2.3",
     "babel-core": "6.26.0",
     "babel-eslint": "^10.0.1",
@@ -36,7 +38,7 @@
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^4.7.1",
+    "eslint-plugin-vue": "^5.0.0-beta.5",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "2.30.1",
