@@ -23,7 +23,10 @@ if(isDev) {
 		host: '0.0.0.0',
 		overlay: {
 			errors: true,
-		},
+    },
+    historyApiFallback: {
+      index: '/index.html'
+    },
 		hot: true
 	}
   config = merge(baseConfig, {

@@ -1,13 +1,21 @@
-import Todo from '../views/todo/todo.vue'
-import Login from '../views/login/index.vue'
+// import Todo from '../views/todo/todo.vue'
+// import Login from '../views/login/index.vue'
 
 export default [
   {
+    path: '/',
+    redirect: '/app'
+  },
+  {
     path: '/app',
-    component: Todo
+    component: () => import('../views/todo/todo.vue'),
+    name: 'app',
+    meta: {
+      title: 'app'
+    }
   },
   {
     path: '/login',
-    component: Login
+    component: () => import('../views/login/index.vue')
   }
 ]
