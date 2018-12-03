@@ -16,8 +16,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "ejs": "^2.6.1",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.2",
+    "vue-server-renderer": "^2.5.17",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -46,6 +51,7 @@
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "2.30.1",
+    "memory-fs": "^0.4.1",
     "minimatch": "^3.0.2",
     "postcss-loader": "2.0.9",
     "rimraf": "^2.6.2",

@@ -1,7 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const ExtractPlugin = require('extract-text-webpack-plugin')
 const baseConfig = require('./webpack.config.base')
+const VueServerPlugin = require('vue-server-renderer')
 
 
 let config
@@ -18,20 +20,28 @@ config = merge(baseConfig, {
   module: {
     rules: [{
       test: /\.styl$/,
-      use: [
-        'vue-style-loader',
-        'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: true
-          }
-        },
-        'stylus-loader'
-      ]
+      use: ExtractPlugin.extract({
+        fallback: 'vue-style-loader',
+        use: [
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          'stylus-loader'
+        ]
+      })
     }]
   },
   plugins: [
+    new ExtractPlugin('styles.[contentHash:8].css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.VUE_ENV': '"server"'
+    }),
+    new VueServerPlugin()
   ]
 })
 
