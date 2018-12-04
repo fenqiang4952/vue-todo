@@ -16,7 +16,7 @@ const defaultPlugins = [
     }
   }),
   new HTMLPlugin(),
-  new VueClientPluginD()
+  new VueClientPlugin()
 ]
 
 if(isDev) {
