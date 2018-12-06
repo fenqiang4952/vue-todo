@@ -7,7 +7,7 @@ const webpack = require('webpack')
 const VueServerRenderer = require('vue-server-renderer')
 
 const serverRender = require('./server-render')
-const serverConfig = require('../../build/webapck.config.server.js')
+const serverConfig = require('../../build/webpack.config.server.js')
 
 const serverCompiler = webpack(serverConfig)
 const mfs = new MemoryFS()

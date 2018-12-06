@@ -14,6 +14,9 @@
 import Header from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 export default {
+  metaInfo: {
+    title: 'strive Todo app'
+  },
   data () {
     return {}
   },
