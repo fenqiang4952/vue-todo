@@ -6,6 +6,8 @@
     <router-link :to="{name: 'app'}">app</router-link>
     <router-link to="/login">login</router-link>
     <router-view />
+    <button @click="openNotify">click</button>
+    <!-- <notification content="test content"></notification> -->
     <Footer></Footer>
   </div>
 </template>
@@ -23,6 +25,14 @@ export default {
   components: {
     Header,
     Footer
+  },
+  methods: {
+    openNotify () {
+      this.$notify({
+        content: 'test notify!!!',
+        autoClose: false
+      })
+    }
   }
 }
 </script>

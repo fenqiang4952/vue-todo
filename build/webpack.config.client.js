@@ -15,7 +15,9 @@ const defaultPlugins = [
       NODE_ENV: isDev ? '"development"' : '"production"'
     }
   }),
-  new HTMLPlugin(),
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  }),
   new VueClientPlugin()
 ]
 
@@ -26,6 +28,7 @@ if(isDev) {
 		overlay: {
 			errors: true,
     },
+    headers: { 'Access-Control-Allow-Origin': '*'},
     historyApiFallback: {
       index: '/index.html'
     },
