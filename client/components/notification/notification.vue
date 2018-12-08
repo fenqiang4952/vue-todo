@@ -1,6 +1,6 @@
 <template>
-  <transition name="fade">
-    <div class="notification" :style="style" v-show="visible">
+  <transition name="fade" @after-leave="afterLeave" @after-enter="afterEnter">
+    <div class="notification" :style="style" v-show="visible" @mouseenter="clearTimer" @mouseleave="createTimer">
       <span class="content">{{content}}</span>
       <a class="btn" @click="handleClose">{{btn }}</a>
     </div>
@@ -34,7 +34,13 @@ export default {
     handleClose (e) {
       e.preventDefault()
       this.$emit('close')
-    }
+    },
+    afterLeave () {
+      this.$emit('closed')
+    },
+    afterEnter () {},
+    clearTimer () {},
+    createTimer () {}
   }
 }
 </script>
@@ -47,6 +53,7 @@ export default {
   align-items center
   padding 20px
   min-width 280px
+  max-width 400px
   box-shadow 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)
   flex-wrap wrap
   transition all .3s

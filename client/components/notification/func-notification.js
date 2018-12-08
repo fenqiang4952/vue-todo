@@ -24,13 +24,17 @@ export default {
     },
     clearTimer () {
       if (this.timer) clearTimeout(this.timer)
+    },
+    afterEnter () {
+      this.height = this.$el.offsetHeight
     }
   },
   data () {
     return {
       verticalOffset: 0,
       autoClose: 3000,
-      visible: true
+      visible: false,
+      height: 0
     }
   }
 }

@@ -29,8 +29,7 @@ export default {
   methods: {
     openNotify () {
       this.$notify({
-        content: 'test notify!!!',
-        autoClose: false
+        content: 'test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!'
       })
     }
   }
