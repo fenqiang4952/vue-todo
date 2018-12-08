@@ -7,6 +7,20 @@
     <router-link to="/login">login</router-link>
     <router-view />
     <button @click="openNotify">click</button>
+    <!-- <tabs :value="value" @change="changeTabValue">
+      <tab index="1" lable="text">
+        <span slot="label">tab1</span>
+        <p>This is tab content1</p>
+      </tab>
+      <tab index="2" lable="text">
+        <span slot="label">tab2</span>
+        <p>This is tab content2</p>
+      </tab>
+      <tab index="3" lable="text">
+        <span slot="label">tab3</span>
+        <p>This is tab content3</p>
+      </tab>
+    </tabs> -->
     <!-- <notification content="test content"></notification> -->
     <Footer></Footer>
   </div>
@@ -20,7 +34,9 @@ export default {
     title: 'strive Todo app'
   },
   data () {
-    return {}
+    return {
+      // value: '1'
+    }
   },
   components: {
     Header,
@@ -32,6 +48,9 @@ export default {
         content: 'test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!test notify!!!'
       })
     }
+    // changeTabValue (index) {
+    //   this.value = index
+    // }
   }
 }
 </script>
